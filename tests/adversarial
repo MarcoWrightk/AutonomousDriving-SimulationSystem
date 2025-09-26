@@ -1,1 +1,8 @@
+#include "safety_evaluator.hpp"
 
+int main() {
+    SensorData corrupted = generateCorruptedInput();
+    double risk = evaluateRisk(corrupted);
+    assert(risk >= 0.5); // Should flag high risk 
+    return 0; 
+}
