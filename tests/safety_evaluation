@@ -1,0 +1,9 @@
+#include "evasion_module.hpp"
+
+int main() {
+    Scenario accident = loadScenario("collision.json");
+    std::string action = respondToThreat(accident);
+    assert(action == "brake" || action == "swerve");
+    return 0;
+}
+
