@@ -1,1 +1,12 @@
+#include <cassert>
+#include "pid_controller.hpp"
+
+int main() {
+    PIDController pid(0.1, 0.01, 0.05);
+    double control = pid.compute(1.0, 0.8); // error = 0.2
+    assert(control > 0.0);
+    return 0;
+}
+
+
 
