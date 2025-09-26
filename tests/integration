@@ -1,1 +1,10 @@
+#include "object_detector.hpp"
+#include "route_planner.hpp"
+
+int main() {
+    auto objects = detectObjects("urban_frame.jpg");
+    auto route = planRoute(objects);
+    assert(!route.empty());
+    return 0;
+}
 
