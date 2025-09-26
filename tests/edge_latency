@@ -1,1 +1,12 @@
+#include <chrono>
+#include "lightweight_model.hpp"
+
+int main() {
+    auto start = std::chrono::high_resolution_clock::now();
+    runInference("input_frame.bin");
+    auto end = std::chrono::high_resolution_clock::now();
+    auto latency = std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count();
+    assert(latency < 50); // <50ms
+    return 0;
+}
 
